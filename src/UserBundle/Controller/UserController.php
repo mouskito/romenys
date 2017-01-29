@@ -47,7 +47,7 @@ class UserController extends Controller
         if ($request->getMethod() === $request::REQUEST_METHOD_POST) {
 
             $newUserName = $request->getPost()["user"]["name"];
-            $newClientEmail = $request->getPost()["user"]["tel"];
+            $newUserTel = $request->getPost()["user"]["tel"];
 
             $newUser = $user->setTel($newUserTel);
             $newUser->setName($newUserName);
