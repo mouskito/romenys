@@ -9,12 +9,11 @@
     	<th> </th>
     	<th> </th>
     </tr>
-    <tr ng-repeat="user in users">
+    <tr>
     	<td>{{ user.name }}</td>
     	<td>{{ user.tel }}</td>
-<!--     	<td><a href="/#!/user
-        /edit/{{user.uniqueId}}"><img src="/web/bundles/ClientBundle/images/edit.png" alt="Modifer le user"/></a></td><td><a href="/#!/user/supp/{{user
-        .id}}"><img src="/web/bundles/ClientBundle/images/delete.png" alt="Supprimer le user"/></a></td> -->
+    	<td><a href="/#!/user/edit/{{user.uniqueId}}">Modifier utilisateur</a></td>
+        <td><a href="/#!/user/supp/{{user.id}}">Supprimer utilisateur</a></td>
     </tr>
   </table>
 </div>

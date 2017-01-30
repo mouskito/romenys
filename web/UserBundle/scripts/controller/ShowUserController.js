@@ -4,8 +4,8 @@ user.controller('ShowUserController', ['$scope', '$http', '$routeParams', functi
     $http.get('/app.php?route=user_show&uniqueId=' + $routeParams.uniqueId)
         .then(
             function (response) {
-                $scope.users = response.data.users;
-                console.log($scope.users);
+                $scope.user = response.data.user;
+                console.log($scope.user);
             },
             function (response) {
                 console.log(response.status);
