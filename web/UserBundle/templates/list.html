@@ -11,10 +11,11 @@
     <tr ng-repeat="user in users">
     	<td>{{ user.name }}</td>
     	<td>{{ user.tel }}</td>
-    	<td><a href="/#!/user/show/{{user.uniqueId}}"><img src="/web/bundles/ClientBundle/images/show.png" alt="Voir le Client"/></a></td>
+    	<td><a href="/#!/user/show/{{user.uniqueId}}"><img src="/web/images/show.png" alt="Voir utilisateur"/></a></td>
 
-    	<td><a href="/#!/user/edit/{{user.uniqueId}}"><img src="/web/bundles/UserBundle/images/edit.png" alt="Modifer le client"/></a></td>
-        <td><a href="" ng-click="delete(client)"><img src="/web/bundles/ClientBundle/images/delete.png" alt="Supprimer le client"/></a></td>
+    	<td><a href="/#!/user/edit/{{user.uniqueId}}"><img src="/web/UserBundle/images/edit.png" alt="Modifer utilisateur"/></a></td>
+
+        <td><a href="" ng-click="deleteOne(user)"><img src="/web/images/delete.png" alt="Supprimer  utilisateur"/></a></td>
 
     </tr>
   </table>

@@ -62,4 +62,13 @@ class UserRepository
 
         return $users;
     }
+
+    public function deleteOne(User $user)
+    {
+        $db = (new DB())->connect();
+
+        $query = $db->prepare(" DELETE  FROM `user`  WHERE `id` =" . $user->getId());
+
+        return $query->execute();
+    }
 }

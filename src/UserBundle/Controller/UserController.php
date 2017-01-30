@@ -100,4 +100,52 @@ class UserController extends Controller
             ]);
         }
     }
+
+    public function showAction(Request $request)
+    {
+        $userRepository = new UserRepository();
+
+       $user = $userRepository->findByUniqueId($request->getGet()["uniqueId"]);
+
+
+        if ($user) {
+            return new JsonResponse([
+                "success" => true,
+                "message" => "L'utilisateur a bien été modifié",
+                "user" => $user->toArray()
+            ]);
+        } else {
+            return new JsonResponse([
+                "success" => false,
+                "message" => "Erreur. L'utilisateur n'a pu être modifier. Vérifier vos droits d'accès ou contacter le support"
+            ]);
+        }
+    }
+
+    public function deleteAction(Request $request)
+    {
+        if ($request->getMethod() === $request::REQUEST_METHOD_POST) {
+            $userRepository = new UserRepository();
+
+            $user = $userRepository->findByUniqueId($request->getPost()["user"]["uniqueId"]);
+            $deleteUser = $userRepository->deleteOne($user);
+
+            if ($deleteUser) {
+                return new JsonResponse([
+                    "success" => true,
+                    "message" => "L'utilisateur a bien été supprimer"
+                ]);
+            } else {
+                return new JsonResponse([
+                    "success" => false,
+                    "message" => "Erreur. L'utilisateur n'a pu être supprimer."
+                ]);
+            }
+        } else {
+            return new JsonResponse([
+                "success" => false,
+                "message" => "Affichage du formulaire de suppression"
+            ]);
+        }
+    }
 }

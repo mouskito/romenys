@@ -14,6 +14,16 @@
       "path": "/user/edit/{id}",
       "controller": "UserBundle\\Controller\\User",
       "action": "edit"
+    },
+      "user_delete": {
+      "path": "/user/delete/{id}",
+      "controller": "UserBundle\\Controller\\User",
+      "action": "delete"
+    },
+    "user_show": {
+      "path": "/user/show/{id}",
+      "controller": "UserBundle\\Controller\\User",
+      "action": "show"
     }
   }
 }

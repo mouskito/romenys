@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+    	<th> Nom</th>
+    	<th> Tel</th>
+    	<th> </th>
+    	<th> </th>
+    	<th> </th>
+    </tr>
+    <tr ng-repeat="user in users">
+    	<td>{{ user.name }}</td>
+    	<td>{{ user.tel }}</td>
+<!--     	<td><a href="/#!/user
+        /edit/{{user.uniqueId}}"><img src="/web/bundles/ClientBundle/images/edit.png" alt="Modifer le user"/></a></td><td><a href="/#!/user/supp/{{user
+        .id}}"><img src="/web/bundles/ClientBundle/images/delete.png" alt="Supprimer le user"/></a></td> -->
+    </tr>
+  </table>
+</div>
+
+

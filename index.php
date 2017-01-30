@@ -20,6 +20,8 @@
     <script src="web/UserBundle/scripts/controller/NewUserController.js"></script>
     <script src="web/UserBundle/scripts/controller/EditUserController.js"></script>
     <script src="web/UserBundle/scripts/controller/ListUserController.js"></script>
+    <script src="web/UserBundle/scripts/controller/DeleteUserController.js"></script>
+    <script src="web/UserBundle/scripts/controller/ShowUserController.js"></script>
 
 
     <!-- App -->

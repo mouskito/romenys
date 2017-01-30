@@ -13,5 +13,13 @@ user.config(function($routeProvider) {
         .when('/user/list/', {
             templateUrl: 'web/UserBundle/templates/list.html',
             controller: 'ListUserController'
+        })
+        .when('/user/delete/:uniqueId', {
+            templateUrl: 'web/UserBundle/templates/list.html',
+            controller: 'DeleteUserController'
+        })
+        .when('/user/show/:uniqueId', {
+            templateUrl: 'web/UserBundle/templates/show.html',
+            controller: 'ShowUserController'
         });
 });
