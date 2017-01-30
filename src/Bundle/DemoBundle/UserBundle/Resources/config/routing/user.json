@@ -1,0 +1,29 @@
+{
+  "route": {
+    "user_new": {
+      "path": "/user/new",
+      "controller": "Bundle/DemoBundle/UserBundle\\Controller\\User",
+      "action": "new"
+    },
+     "user_list": {
+      "path": "/user/list",
+      "controller": "Bundle/DemoBundle/UserBundle\\Controller\\User",
+      "action": "list"
+    },
+      "user_edit": {
+      "path": "/user/edit/{id}",
+      "controller": "Bundle/DemoBundle/UserBundle\\Controller\\User",
+      "action": "edit"
+    },
+      "user_delete": {
+      "path": "/user/delete/{id}",
+      "controller": "Bundle/DemoBundle/UserBundle\\Controller\\User",
+      "action": "delete"
+    },
+    "user_show": {
+      "path": "/user/show/{id}",
+      "controller": "Bundle/DemoBundle/UserBundle\\Controller\\User",
+      "action": "show"
+    }
+  }
+}

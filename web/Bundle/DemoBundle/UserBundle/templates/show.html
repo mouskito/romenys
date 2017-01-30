@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+    	<th> Nom</th>
+    	<th> Tel</th>
+    	<th> </th>
+    	<th> </th>
+    	<th> </th>
+    </tr>
+    <tr>
+    	<td>{{ user.name }}</td>
+    	<td>{{ user.tel }}</td>
+    	<td><a href="/#!/user/edit/{{user.uniqueId}}">Modifier utilisateur</a></td>
+        <td><a href="/#!/user/supp/{{user.id}}">Supprimer utilisateur</a></td>
+    </tr>
+  </table>
+</div>
+
+

@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uniqueId` VARCHAR(191) UNIQUE NOT NULL DEFAULT '',
+  `name` VARCHAR(191) UNIQUE NOT NULL DEFAULT '',
+  `tel` INTEGER UNIQUE NOT NULL,
+  `createdAt` DATETIME,
+  PRIMARY KEY (`id`)
+)ENGINE = InnoDB;
+
+
+INSERT INTO `user` (`uniqueId`, `name`, `tel`, `createdAt`) VALUES ('123456', 'Moussa Camara', '0123456789', '2017-01-29 18:05:55');

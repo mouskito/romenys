@@ -15,13 +15,27 @@
     <script src="web/vendor/ng-file-upload/ng-file-upload.min.js"></script>
 
     <!-- User -->
-    <script src="web/UserBundle/scripts/user.js"></script>
+<!--     <script src="web/UserBundle/scripts/user.js"></script>
     <script src="web/UserBundle/scripts/config/routing.js"></script>
     <script src="web/UserBundle/scripts/controller/NewUserController.js"></script>
     <script src="web/UserBundle/scripts/controller/EditUserController.js"></script>
     <script src="web/UserBundle/scripts/controller/ListUserController.js"></script>
     <script src="web/UserBundle/scripts/controller/DeleteUserController.js"></script>
-    <script src="web/UserBundle/scripts/controller/ShowUserController.js"></script>
+    <script src="web/UserBundle/scripts/controller/ShowUserController.js"></script> -->
+
+        <!-- User - DemoBundle -->
+    <script src="web/Bundle/DemoBundle/UserBundle/scripts/user.js"></script>
+    <script src="web/Bundle/DemoBundle/UserBundle/scripts/config/routing.js"></script>
+    <script src="web/Bundle/DemoBundle/UserBundle/scripts/controller/NewUserController.js"></script>
+    <script src="web/Bundle/DemoBundle/UserBundle/scripts/controller/EditUserController.js"></script>
+    <script src="web/Bundle/DemoBundle/UserBundle/scripts/controller/ListUserController.js"></script>
+    <script src="web/Bundle/DemoBundle/UserBundle/scripts/controller/DeleteUserController.js"></script>
+    <script src="web/Bundle/DemoBundle/UserBundle/scripts/controller/ShowUserController.js"></script>
+
+        <!-- House - DemoBundle -->
+    <script src="web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/scripts/house.js"></script>
+    <script src="web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/scripts/config/routing.js"></script>
+    <script src="web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/scripts/controller/NewHouseController.js"></script>
 
 
     <!-- App -->

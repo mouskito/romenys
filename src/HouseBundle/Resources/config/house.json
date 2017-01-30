@@ -1,0 +1,5 @@
+{
+  "file": {
+    "house": "src/HouseBundle/Resources/config/routing/house.json"
+  }
+}
