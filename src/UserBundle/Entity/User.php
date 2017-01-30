@@ -20,8 +20,7 @@ class User extends Model
     /**
      * @var int
      */
-    //private $id;
-    protected $id;
+    private $id;
 
     /**
      * @var string

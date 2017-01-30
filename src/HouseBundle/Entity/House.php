@@ -2,30 +2,32 @@
 /**
  * Created by iKNSA.
  * Author: Khalid Sookia <khalidsookia@gmail.com>
- * Date: 05/12/16
- * Time: 20:48
+ * Date: 24/01/17
+ * Time: 13:27
  */
 
 namespace HouseBundle\Entity;
 
+
 use Romenys\Framework\Components\Model;
+use UserBundle\Entity\User;
 
 class House extends Model
 {
     /**
-     * @var integer
+     * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      */
-    private $color = '';
+    protected $color;
 
     /**
      * @var User
      */
-    private $user;
+    protected $user;
 
     /**
      * @return int
@@ -37,10 +39,12 @@ class House extends Model
 
     /**
      * @param int $id
+     * @return House
      */
     public function setId($id)
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
@@ -53,13 +57,11 @@ class House extends Model
 
     /**
      * @param string $color
-     *
      * @return House
      */
     public function setColor($color)
     {
         $this->color = $color;
-
         return $this;
     }
 
@@ -72,15 +74,12 @@ class House extends Model
     }
 
     /**
-     * @param mixed $user
-     *
+     * @param User $user
      * @return House
      */
     public function setUser(User $user)
     {
         $this->user = $user;
-
-        return  $this;
+        return $this;
     }
-
 }

@@ -6,75 +6,47 @@
  * Time: 01:17
  */
 
-namespace PropertiesBundle\HouseBundle\Controller;
+namespace HouseBundle\Controller;
 
-use PropertiesBundle\HouseBundle\Entity\Car;
-use PropertiesBundle\HouseBundle\Entity\House;
-use PropertiesBundle\HouseBundle\Entity\User;
-use Romenys\Framework\Components\DB\DB;
+use HouseBundle\Repository\HouseRepository;
+use UserBundle\Entity\User;
 use Romenys\Framework\Controller\Controller;
 use Romenys\Http\Request\Request;
 use Romenys\Http\Response\JsonResponse;
+use HouseBundle\Entity\House;
 
 class HouseController extends Controller
 {
     public function newAction(Request $request)
     {
-        $request->uploadFiles();
+        $houseRepository = new HouseRepository();
 
-        $house = new House($request->getPost()["house"]);
 
-        $user = new User($request->getPost()["house"]["examples_entity_user"]);
-        $user->setAvatar($request->getUploadedFiles()["examples_entity_user"]["avatar"]["uploaded_file"]);
-        $user->setProfile($request->getUploadedFiles()["examples_entity_user"]["profile"]["uploaded_file"]);
+        if ($request->getMethod() === $request::REQUEST_METHOD_POST) {
+            $user = new User($request->getPost()["house"]["user"]);
 
-        $db = new DB();
-        $db = $db->connect();
+            $HData = $request->getPost()["house"];
+            $HData["user"] = $user;
 
-        $userInsertQuery = $db->prepare("INSERT INTO `user` (`name`, `email`, `avatar`, `profile`) VALUES (:name, :email, :avatar, :profile)");
-        $userInsertQuery->bindValue(":name", $user->getName());
-        $userInsertQuery->bindValue(":email", $user->getEmail());
-        $userInsertQuery->bindValue(":avatar", $user->getAvatar());
-        $userInsertQuery->bindValue(":profile", $user->getProfile());
-        $userInsertQuery->execute();
+            $house = new House($HData);
 
-        $userId = $db->query("SELECT LAST_INSERT_ID()")->fetchColumn(`LAST_INSERT_ID()`);
-
-        $user->setId($userId);
-        $house->setUser($user);
-
-        $car = new Car($request->getPost()["house"]["examples_entity_car"]);
-        $car->setUser($user);
-
-        $carInsertQuery = $db->prepare("INSERT INTO `car` (`brand`, `pictures`, `user`) VALUES (:brand, :pictures, :user)");
-        $carInsertQuery->bindValue(":brand", $car->getBrand());
-        $carInsertQuery->bindValue(":pictures", null);
-        $carInsertQuery->bindValue(":user", $car->getUser()->getId());
-        $carInsertQuery->execute();
-
-        $houseInsertQuery = $db->prepare("INSERT INTO `house` (`color`, `user`) VALUES (:color, :user)");
-        $houseInsertQuery->bindValue(":color", $house->getColor());
-        $houseInsertQuery->bindValue(":user", $house->getUser()->getId());
-        $houseInsertQuery->execute();
+            if ($houseRepository->create($house)) {
+                return new JsonResponse([
+                    "success" => true,
+                    "message" => "L'assurance a bien été ajouté",
+                    "assurance" => $house->toArray()
+                ]);
+            } else {
+                return new JsonResponse([
+                    "success" => false,
+                    "message" => "Erreur. L'assurance n'a pu être ajouter. Vérifier vos droits d'accès ou contacter le support"
+                ]);
+            }
+        }
 
         return new JsonResponse([
-            "user" => $user,
-            "car" => $car,
-            "house" => $house
-        ]);
-    }
-
-    public function showAction(Request $request)
-    {
-        $id = $request->getGet()["id"];
-
-        $db = new DB();
-        $db = $db->connect();
-
-        $house = $db->query("SELECT * FROM `house` WHERE id = " . $id)->fetch($db::FETCH_ASSOC);
-
-        return new JsonResponse([
-            "house" => $house
+            "success" => true,
+            "message" => "Affichage du formulaire"
         ]);
     }
 }

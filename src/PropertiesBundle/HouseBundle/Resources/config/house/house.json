@@ -1,8 +1,0 @@
-{
-  "route": {
-    "house_new": {
-      "path": "/house/new",
-      "controller": "PropertiesBundle\\HouseBundle\\Controller\\House",
-      "action": "new"
-    }
-}

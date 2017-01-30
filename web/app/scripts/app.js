@@ -5,4 +5,4 @@
  * Time: 21:03
  */
 
-var app = angular.module('app', ['ngRoute', 'ngSanitize', 'UserModule']);
+var app = angular.module('app', ['ngRoute', 'ngSanitize', 'UserModule','HouseModule']);

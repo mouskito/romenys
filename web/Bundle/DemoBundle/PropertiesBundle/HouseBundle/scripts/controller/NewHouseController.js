@@ -1,5 +1,14 @@
 house.controller('NewHouseController', ['$scope', '$http', function ($scope, $http) {
-    console.log('NewHouseController');
+
+    $scope.house = {};
+
+    $http.get('/app.php?route=user_list')
+        .then(
+            function (response) {
+                console.log(response);
+                $scope.house.users = response.data.users;
+            }
+        );
 
     $scope.create = function (house) {
         $http.post('/app.php?route=house_new', {house: house})

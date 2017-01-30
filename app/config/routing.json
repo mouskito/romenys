@@ -1,5 +1,6 @@
 {
     "file": {
-        "user": "src/UserBundle/Resources/config/routing/user.json"
+        "user": "src/UserBundle/Resources/config/routing/user.json",
+        "house": "src/HouseBundle/Resources/config/house/house.json"
     }
 }

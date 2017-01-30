@@ -3,6 +3,7 @@
 namespace HouseBundle\Repository;
 
 
+use UserBundle\Repository\UserRepository;
 use Romenys\Framework\Components\DB\DB;
 use HouseBundle\Entity\House;
 
@@ -17,7 +18,7 @@ class HouseRepository
         );
 
         $query->bindValue(':color', $house->getColor());
-        $query->bindValue(':user', $house->getUser());
+        $query->bindValue(':user', $house->getUser()->getUniqueId());
 
         return $query->execute();
     }
