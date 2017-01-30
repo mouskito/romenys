@@ -11,4 +11,16 @@ user.controller('ListUserController', ['$scope', '$http', function ($scope, $htt
                 console.log(response.status);
             }
         );
+
+        $scope.deleteOne = function (user) {
+        $http.post('/app.php?route=user_delete', {user: user})
+            .then(
+                function (response) {
+                    console.log(response);
+                },
+                function (response) {
+                    console.log(response);
+                }
+            );
+    }
 }]);

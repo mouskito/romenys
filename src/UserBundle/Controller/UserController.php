@@ -111,13 +111,13 @@ class UserController extends Controller
         if ($user) {
             return new JsonResponse([
                 "success" => true,
-                "message" => "L'utilisateur a bien été modifié",
+                "message" => "L'utilisateur a bien été affiché",
                 "user" => $user->toArray()
             ]);
         } else {
             return new JsonResponse([
                 "success" => false,
-                "message" => "Erreur. L'utilisateur n'a pu être modifier. Vérifier vos droits d'accès ou contacter le support"
+                "message" => "Erreur. L'utilisateur n'a pu être afficher"
             ]);
         }
     }
