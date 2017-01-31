@@ -13,5 +13,9 @@ house.config(function($routeProvider) {
         .when('/house/edit/:id', {
             templateUrl: 'web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/templates/edit.html',
             controller: 'EditHouseController'
+        })
+        .when('/house/delete/:id', {
+            templateUrl: 'web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/templates/list.html',
+            controller: 'ListHouseController'
         });
 });

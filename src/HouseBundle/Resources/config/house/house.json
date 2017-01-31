@@ -15,6 +15,11 @@
       "path": "/house/edit",
       "controller": "HouseBundle\\Controller\\House",
       "action": "edit"
+    },
+    "house_delete": {
+      "path": "/house/delete/{{id}}",
+      "controller": "HouseBundle\\Controller\\House",
+      "action": "delete"
     }
 }
 }

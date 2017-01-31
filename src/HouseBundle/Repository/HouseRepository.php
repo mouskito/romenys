@@ -60,4 +60,13 @@ class HouseRepository
 
         return $query->execute();
     }
+
+    public function delete(House $house)
+    {
+        $db = (new DB())->connect();
+
+        $query = $db->query("DELETE FROM `house` WHERE `id` = " . $house->getId());
+
+        return $query->execute();
+    }
 }

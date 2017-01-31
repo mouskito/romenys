@@ -11,5 +11,17 @@ house.controller('ListHouseController', ['$scope', '$http', function ($scope, $h
                 console.log(response.status);
             }
         );
+
+        $scope.delete = function (house) {
+        $http.post('/app.php?route=house_delete&id=' + $routeParams.id, {house: house})
+            .then(
+                function (response) {
+                    console.log(response);
+                },
+                function (response) {
+                    console.log(response.status);
+                }
+            );
+    }
 }]);
 

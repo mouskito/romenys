@@ -93,4 +93,24 @@ class HouseController extends Controller
 
         return new JsonResponse($response);
     }
+
+    public function deleteAction(Request $request)
+    {
+        if ($request->getMethod() === $request::REQUEST_METHOD_POST) {
+            $houseRepository = new HouseRepository();
+
+            $house = $houseRepository->findById($request->getGet()["id"]);
+
+            if ($houseRepository->delete($house)) {
+                $response["success"] = true;
+            } else {
+                $response["success"] = false;
+            }
+        } else {
+            $response["success"] = false;
+            $response["error"] = "La méthode n'est pas autorisé";
+        }
+
+        return new JsonResponse($response);
+    }
 }
