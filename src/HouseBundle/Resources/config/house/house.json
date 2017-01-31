@@ -4,6 +4,11 @@
       "path": "/house/new",
       "controller": "HouseBundle\\Controller\\House",
       "action": "new"
+    },
+    "house_list": {
+      "path": "/house/list",
+      "controller": "HouseBundle\\Controller\\House",
+      "action": "list"
     }
 }
 }

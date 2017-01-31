@@ -12,9 +12,5 @@ app.config(function($routeProvider) {
         .when('/', {
             templateUrl: 'web/app/templates/dashboard.html',
             controller: 'DashboardController'
-        })
-    // .otherwise({
-    //     redirectTo: '/error/404'
-    // });
-    ;
+        });
 });

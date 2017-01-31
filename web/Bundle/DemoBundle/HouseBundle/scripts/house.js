@@ -1,0 +1,1 @@
+var house = angular.module('HouseModule', ['ngRoute', 'ngSanitize']);

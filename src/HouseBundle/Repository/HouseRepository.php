@@ -22,4 +22,20 @@ class HouseRepository
 
         return $query->execute();
     }
+
+    public function listAll()
+    {
+        $db = (new DB())->connect();
+        $userRepository = new UserRepository();
+
+        $housesData = $db->query("SELECT * FROM `house`")->fetchAll($db::FETCH_ASSOC);
+
+        $houses = [];
+        foreach ($housesData as $houseData) {
+            $houseData["user"] = $userRepository->findByUniqueId($houseData["user"]);
+            $houses[] = new House($houseData);
+        }
+
+        return $houses;
+    }
 }

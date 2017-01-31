@@ -49,4 +49,20 @@ class HouseController extends Controller
             "message" => "Affichage du formulaire"
         ]);
     }
+
+    public function listAction()
+    {
+        $houseRepository = new HouseRepository();
+
+        $houses = $houseRepository->listAll();
+
+        $houseData = [];
+        foreach ($houses as $house) {
+            $houseData[] = $house->toArray();
+        }
+
+        return new JsonResponse([
+            "houses" => $houseData
+        ]);
+    }
 }
