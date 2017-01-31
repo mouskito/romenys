@@ -12,17 +12,17 @@
     }
     ,
     "house_edit": {
-      "path": "/house/edit",
+      "path": "/house/edit/{id}",
       "controller": "HouseBundle\\Controller\\House",
       "action": "edit"
     },
     "house_delete": {
-      "path": "/house/delete/{{id}}",
+      "path": "/house/delete/{id}",
       "controller": "HouseBundle\\Controller\\House",
       "action": "delete"
     },
     "house_show": {
-      "path": "/house/show/{{id}}",
+      "path": "/house/show/{id}",
       "controller": "HouseBundle\\Controller\\House",
       "action": "show"
     }

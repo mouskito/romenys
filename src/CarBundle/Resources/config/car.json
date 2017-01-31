@@ -1,0 +1,5 @@
+{
+  "file": {
+    "car": "src/CarBundle/Resources/config/car/car.json"
+  }
+}

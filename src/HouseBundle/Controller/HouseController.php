@@ -33,13 +33,13 @@ class HouseController extends Controller
             if ($houseRepository->create($house)) {
                 return new JsonResponse([
                     "success" => true,
-                    "message" => "L'assurance a bien été ajouté",
-                    "assurance" => $house->toArray()
+                    "message" => "Une maison a bien été ajouté",
+                    "house" => $house->toArray()
                 ]);
             } else {
                 return new JsonResponse([
                     "success" => false,
-                    "message" => "Erreur. L'assurance n'a pu être ajouter. Vérifier vos droits d'accès ou contacter le support"
+                    "message" => "Erreur. La maison n'a pu être ajouter. Vérifier vos droits d'accès ou contacter le support"
                 ]);
             }
         }

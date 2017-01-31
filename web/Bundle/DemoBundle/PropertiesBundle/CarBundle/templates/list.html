@@ -6,13 +6,19 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-<table>
+<table class="table">
 	<tr>
 		<th>Maison</th>
 		<th>Propriétaire</th>
+		<th></th>
+		<th></th>
+		<th></th>
 	</tr>
 	<tr ng-repeat="house in houses">
 		<td>{{house.color}}</td>
 		<td>{{house.user.name}}</td>
+		<td><a href="/#!/house/show/{{ house.id }}">Voir </a></td>
+		<td><a href="/#!/house/edit/{{ house.id }}">Modifier</a></td>
+		<td><a href="" ng-click="delete(house)">Supprimer</a></td>
 	</tr>
 </table>
