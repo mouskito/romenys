@@ -20,6 +20,11 @@
       "path": "/house/delete/{{id}}",
       "controller": "HouseBundle\\Controller\\House",
       "action": "delete"
+    },
+    "house_show": {
+      "path": "/house/show/{{id}}",
+      "controller": "HouseBundle\\Controller\\House",
+      "action": "show"
     }
 }
 }

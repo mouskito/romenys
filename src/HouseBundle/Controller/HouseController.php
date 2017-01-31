@@ -113,4 +113,16 @@ class HouseController extends Controller
 
         return new JsonResponse($response);
     }
+
+    public function showAction(Request $request)
+    {
+        $houseRepository = new HouseRepository();
+
+        $house = $houseRepository->findById($request->getGet()["id"]);
+
+        return new JsonResponse([
+            "success" => true,
+            "house" => $house->toArray()
+        ]);
+    }
 }

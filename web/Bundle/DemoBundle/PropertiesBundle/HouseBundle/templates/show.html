@@ -1,0 +1,21 @@
+  <table class="table">
+    <tr>
+    	<th> Maison</th>
+    	<th> Propriétaire</th>
+    	<th> </th>
+    	<th> </th>
+    	<th> </th>
+    </tr>
+    <tr>
+    	<td>{{ house.color }}</td>
+    	<td>{{ house.user.name }}</td>
+    	<td>
+            <a href="/#!/house/edit/{{house.id}}">Modifier</a>
+        </td>
+        <td>
+            <span ng-click="delete(house)">
+                Supprimer
+            </span>
+        </td>
+    </tr>
+  </table>
