@@ -10,5 +10,11 @@
       "controller": "HouseBundle\\Controller\\House",
       "action": "list"
     }
+    ,
+    "house_edit": {
+      "path": "/house/edit",
+      "controller": "HouseBundle\\Controller\\House",
+      "action": "edit"
+    }
 }
 }

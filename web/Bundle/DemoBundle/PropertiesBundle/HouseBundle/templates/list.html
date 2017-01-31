@@ -17,5 +17,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	<tr ng-repeat="house in houses">
 		<td>{{house.color}}</td>
 		<td>{{house.user.name}}</td>
+		<td><a href="/#!/house/edit/{{ house.id }}">Modifier</a></td>
 	</tr>
 </table>

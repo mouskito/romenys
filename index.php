@@ -30,6 +30,7 @@
     <script src="web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/scripts/config/routing.js"></script>
     <script src="web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/scripts/controller/NewHouseController.js"></script>
     <script src="web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/scripts/controller/ListHouseController.js"></script>
+    <script src="web/Bundle/DemoBundle/PropertiesBundle/HouseBundle/scripts/controller/EditHouseController.js"></script>
 
 
     <!-- App -->

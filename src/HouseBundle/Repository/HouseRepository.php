@@ -23,6 +23,18 @@ class HouseRepository
         return $query->execute();
     }
 
+    public function findById($id)
+    {
+        $db = (new DB())->connect();
+        $userRepository = new UserRepository();
+
+        $houseData = $db->query("SELECT * FROM `house` WHERE `id`= '" . $id . "'")->fetch($db::FETCH_ASSOC);
+
+        $houseData["user"] = $userRepository->findByUniqueId($houseData["user"]);
+
+        return new House($houseData);
+    }
+
     public function listAll()
     {
         $db = (new DB())->connect();
@@ -37,5 +49,15 @@ class HouseRepository
         }
 
         return $houses;
+    }
+
+    public function update(House $house)
+    {
+        $db = (new DB())->connect();
+
+        $query = $db->query(
+            "UPDATE `house` SET `color` = " . $house->getColor());
+
+        return $query->execute();
     }
 }
